@@ -21,7 +21,8 @@ RUN apk add --update git curl openssh unzip \
       libffi \
       libffi-dev \
       openssl-dev \
-    && pip install ansible awscli jq \
+      jq \
+    && pip install ansible awscli \
     && curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
     && unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /bin \
     && rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
