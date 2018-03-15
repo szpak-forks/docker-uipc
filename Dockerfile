@@ -25,7 +25,7 @@ RUN apk add --update git curl openssh unzip \
       jq \
     && pip install \
       ansible \
-      pywinrm[credssp]
+      pywinrm[credssp] \
       requests-credssp \
       awscli \
       pyopenssl \
