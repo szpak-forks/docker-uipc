@@ -25,6 +25,8 @@ RUN apk add --update git curl openssh unzip \
       jq \
     && pip install \
       ansible \
+      pywinrm[credssp]
+      requests-credssp \
       awscli \
       ansible-modules-hashivault \
     && curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip > terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
