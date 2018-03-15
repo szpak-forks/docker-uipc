@@ -21,6 +21,7 @@ RUN apk add --update git curl openssh unzip \
       libffi \
       libffi-dev \
       openssl-dev \
+      openssl \
       jq \
     && pip install \
       ansible \
