@@ -14,6 +14,7 @@ RUN apk add --update git curl openssh unzip \
     && unzip packer_${PACKER_VERSION}_linux_amd64.zip -d /bin \
     && rm -f packer_${PACKER_VERSION}_linux_amd64.zip \
     && apk add --update \
+      bash \
       docker \
       python \
       python-dev \
