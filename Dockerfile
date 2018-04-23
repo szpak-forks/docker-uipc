@@ -43,9 +43,9 @@ RUN apk add --update git curl openssh unzip tar gzip \
     && curl https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip > vault.zip \
     && unzip vault.zip -d /bin \
     && rm -f vault.zip \
-    && curl https://kubernetes-helm.storage.googleapis.com/helm-v${HELM_VERSION}-linux-amd64.tar.gz > helm.tgz
-    && tar -zxvf helm.tgz -C /bin --steip-components=1 linux-amd64/helm
-    && rm -f helm.tgz
+    && curl https://kubernetes-helm.storage.googleapis.com/helm-v${HELM_VERSION}-linux-amd64.tar.gz > helm.tgz \
+    && tar -zxvf helm.tgz -C /bin --steip-components=1 linux-amd64/helm \
+    && rm -f helm.tgz \
     && rm -rf /var/cache/apk/*
 
 RUN adduser user -D -g '' -u 1000 -h /home/user
