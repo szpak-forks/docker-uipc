@@ -53,5 +53,5 @@ RUN apk add --update git curl openssh unzip tar gzip \
       ansible-modules-hashivault \
     && rm -rf /var/cache/apk/*
 
-RUN adduser user -D -g '' -u 1000 -h /home/user
-USER 1000
+RUN adduser user -D -g '' -u 10000 -h /home/user
+USER 10000
