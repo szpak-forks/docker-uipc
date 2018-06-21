@@ -15,6 +15,8 @@ ENV KUBECTL_VERSION=${KUBECTL_VERSION}
 ARG HELM_VERSION=2.8.2
 ENV HELM_VERSION=${HELM_VERSION}
 
+ADD pause /bin
+
 RUN apk add --update git curl openssh unzip tar gzip \
     && curl https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip > packer.zip \
     && unzip packer.zip -d /bin \
@@ -52,6 +54,7 @@ RUN apk add --update git curl openssh unzip tar gzip \
       boto3 \
       ansible-modules-hashivault \
     && rm -rf /var/cache/apk/*
+    && wget -O /bin/ecs-deploy https://raw.githubusercontent.com/silinternational/ecs-deploy/develop/ecs-deploy
 
 RUN adduser user -D -g '' -u 10000 -h /home/user
 USER 10000
