@@ -27,7 +27,7 @@ RUN apk add --update git curl openssh unzip tar gzip \
     && curl https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip > vault.zip \
     && unzip vault.zip -d /bin \
     && rm -f vault.zip \
-    && curl  https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl > /bin/kubectl \
+    && curl https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl > /bin/kubectl \
     && chmod +x /bin/kubectl \
     && curl https://kubernetes-helm.storage.googleapis.com/helm-v${HELM_VERSION}-linux-amd64.tar.gz > helm.tgz \
     && tar -zxvf helm.tgz -C /bin --strip-components=1 linux-amd64/helm \
@@ -54,7 +54,8 @@ RUN apk add --update git curl openssh unzip tar gzip \
       boto3 \
       ansible-modules-hashivault \
     && rm -rf /var/cache/apk/* \
-    && wget -O /bin/ecs-deploy https://raw.githubusercontent.com/silinternational/ecs-deploy/develop/ecs-deploy
+    && curl https://raw.githubusercontent.com/silinternational/ecs-deploy/develop/ecs-deploy > /bin/ecs-deploy \
+    && chmod +x /bin/ecs-deploy
 
 RUN adduser user -D -g '' -u 10000 -h /home/user
 USER 10000
