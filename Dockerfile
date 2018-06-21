@@ -53,7 +53,7 @@ RUN apk add --update git curl openssh unzip tar gzip \
       boto \
       boto3 \
       ansible-modules-hashivault \
-    && rm -rf /var/cache/apk/*
+    && rm -rf /var/cache/apk/* \
     && wget -O /bin/ecs-deploy https://raw.githubusercontent.com/silinternational/ecs-deploy/develop/ecs-deploy
 
 RUN adduser user -D -g '' -u 10000 -h /home/user
