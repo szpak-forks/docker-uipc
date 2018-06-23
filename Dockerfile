@@ -55,7 +55,9 @@ RUN apk add --update git curl openssh unzip tar gzip \
       ansible-modules-hashivault \
     && rm -rf /var/cache/apk/* \
     && curl https://raw.githubusercontent.com/silinternational/ecs-deploy/develop/ecs-deploy > /bin/ecs-deploy \
-    && chmod +x /bin/ecs-deploy
+    && chmod +x /bin/ecs-deploy \
+    && curl https://gist.githubusercontent.com/victorcoder/3ac4aae9279d7c68c486fecccc2546cc/raw/f43273b72ef4cc3275b46cf8892f1a92d6c00331/ecs-run > /bin/ecs-run \
+    && chmod +x /bin/ecs-run
 
 RUN adduser user -D -g '' -u 10000 -h /home/user
 USER 10000
