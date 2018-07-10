@@ -15,7 +15,7 @@ ENV KUBECTL_VERSION=${KUBECTL_VERSION}
 ARG HELM_VERSION=2.8.2
 ENV HELM_VERSION=${HELM_VERSION}
 
-ADD pause /bin
+ADD pause /bin/
 
 RUN apk add --update git curl openssh unzip tar gzip \
     && curl https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip > packer.zip \
