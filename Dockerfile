@@ -44,6 +44,7 @@ RUN apk add --update git curl openssh unzip tar gzip \
       openssl-dev \
       openssl \
       jq \
+      m4 \
     && pip install \
       ansible \
       pywinrm[credssp] \
